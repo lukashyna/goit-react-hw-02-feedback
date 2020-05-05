@@ -3,6 +3,7 @@ import Section from './components/section/section';
 import Statistics from './components/statistics/statistics';
 import FeedbackOptions from './components/feedbackOptions/feedbackOptions';
 import NoFeedback from './components/noFeedback/noFeedback';
+import styles from './app.module.css';
 
 export default class App extends Component {
   state = {
@@ -35,7 +36,7 @@ export default class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <div>
+      <div className={styles.container}>
         <Section title="Please leave feedback">
           <FeedbackOptions options={this.options} onLeaveFeedback={this.handleFeedback} />
         </Section>
